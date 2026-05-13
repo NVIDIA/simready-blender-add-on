@@ -144,7 +144,7 @@ Open Blender's add-on preferences:
 
    <img src="./doc_images_ref/_5_install_zip.png" alt="image5" width="800">
 
-   7. Wait for the installation to complete. This typically takes 15 seconds to one minute, depending on connection speeds. If it does not finish within five minutes, **restart Blender**.
+   7. Wait for the installation to complete. This can take several minutes, depending on connection speeds, during which Blender does not report any installation progress. If it does not finish within ten minutes, **restart Blender**.
 
 4. Enable the Blender CORE Add-on. **Note:** This might not be necessary. Blender usually auto-enables it.
 

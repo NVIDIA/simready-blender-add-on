@@ -187,7 +187,7 @@ You use **Blender Preferences** to install the SimReady Blender Add-on, as follo
 9. Select `SimReady_Blender_CORE_2026.4.0.zip`. **(2)**  
 10. Click **Install from Disk** **(3)**.
 
-Wait for the installation to complete; it might take a few minutes depending on your internet speeds. Subsequent installs should be much faster.
+Wait for the installation to complete. This can take several minutes, depending on connection speeds, during which Blender does not report any installation progress. If it does not finish within ten minutes, **restart Blender**.
 
 ### Link the SimReady Blender Add-on to SimReady Foundations
 
