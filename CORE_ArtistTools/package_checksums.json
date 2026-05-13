@@ -1,0 +1,17 @@
+{
+  "PySide6": {
+    "checksum": "9ce13837b5106280cfad34038ce2472889eab75ff1c226173ac73517a806a56e",
+    "timestamp": 1755475942.0124788,
+    "version": "6.8.2.1"
+  },
+  "markdown": {
+    "checksum": "5f8b85e659e6cd790d7aa54d577789eee8baf83018f6b7531d69b075f99c8fbf",
+    "timestamp": 1755475942.0224736,
+    "version": "3.7"
+  },
+  "mujoco-usd-converter": {
+    "checksum": "2f8f22afaced2a387e69c47a9c1f86683fe38ce208d32571f0bcdd43de8ff472",
+    "timestamp": 1755475611.5267725,
+    "version": "0.1.0a1"
+  }
+}

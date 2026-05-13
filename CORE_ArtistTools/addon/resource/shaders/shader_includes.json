@@ -1,0 +1,21 @@
+{
+    "shader_includes": {
+        "OmniPBR": [
+            "OmniPBR/OmniPBR.mdl",
+            "OmniPBR/OmniPBR_ClearCoat.mdl",
+            "OmniPBR/OmniPBRBase.mdl"
+        ],
+        "OmniGlass": [
+            "OmniPBR/OmniGlass.mdl",
+            "OmniPBR/OmniGlass_Opacity.mdl"
+        ],
+        "SimPBR": [
+            "SimPBR/SimPBR.mdl",
+            "SimPBR/SimPBR_Model.mdl",
+            "SimPBR/SimPBR_Core.mdl"
+        ],
+        "SimPBR_Translucent": [
+            "SimPBR/SimPBR_Translucent.mdl"
+        ]
+    }
+}

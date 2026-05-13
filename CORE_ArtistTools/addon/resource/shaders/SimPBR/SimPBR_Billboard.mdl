@@ -1,0 +1,92 @@
+mdl 1.7;
+
+import ::df::*;
+import ::state::*;
+import ::math::*;
+import ::base::*;
+import ::tex::*;
+import ::anno::*;
+
+export material SimPBR_Billboard(
+    uniform int billboard_index = 0 [[
+        ::anno::description("The index of the active billboard texture")
+    ]],
+    uniform texture_2d colormap = texture_2d() [[
+        ::anno::description("The UDIM texture set to use. Needs to be in the form of some_Texture_name.<UDIM>.png"),
+        ::anno::usage("base_color")
+    ]],
+    uniform texture_2d normalmap = texture_2d() [[
+        ::anno::description("The UDIM texture set to use. Needs to be in the form of some_Texture_name.<UDIM>.png"),
+        ::anno::usage("normal")
+    ]],
+    uniform float bump_factor = 1.0f,
+    uniform int2 alignment = int2(1, 0) [[
+        ::anno::description("The alignment of the billboard texture in case of non 1:1 aspect ratio. (0, 0) Means alignment bottom-left alignment, (1, 1) means centered, (2, 2) means aligned top-right"),
+        ::anno::hard_range(int2(0, 0), int2(2, 2))
+    ]],
+    uniform float hemispherical_normal_scale = 0.0f [[
+        ::anno::description("Bent normal to fake some depth in the billboard"),
+        ::anno::hard_range(0.0, 2.0)
+    ]]
+) = let {
+    // Compute the UDIM tile to use.
+    uniform int2 billboard_udim_idx = int2(
+        billboard_index % 10, // UDIM rows are 10 columns at most.
+        billboard_index / 10
+    );
+    // Get texture dimensions for the current tile.
+    float2 billboard_dims = float2(
+        tex::width(colormap, uv_tile: billboard_udim_idx),
+        tex::height(colormap, uv_tile: billboard_udim_idx)
+    );
+    float billboard_ratio = billboard_dims.y / billboard_dims.x;
+
+    float2 uv_offset = billboard_ratio > 1.0 ? float2((billboard_ratio - 1.0) / 2.0, 0.0) : float2(0.0, (1.0 / billboard_ratio - 1.0) / 2.0);
+    float2 uv_scale = billboard_ratio > 1.0 ? float2(billboard_ratio, 1.0) : float2(1.0, 1.0 / billboard_ratio);
+
+    // Compute the actual UV to use
+    base::texture_coordinate_info coord_uvw = base::transform_coordinate(
+        coordinate: base::texture_coordinate_info(),
+        transform: base::rotation_translation_scale(
+            translation: float3(-uv_offset.x * alignment.x, -uv_offset.y * alignment.y, 0.0),
+            scaling: float3(uv_scale.x, uv_scale.y, 0.0)
+        )
+    );
+    
+    bool is_valid_coord = coord_uvw.position.x > 0 && coord_uvw.position.x < 1 && coord_uvw.position.y > 0 && coord_uvw.position.y < 1; 
+
+    base::texture_coordinate_info udim_coords = base::transform_coordinate(
+        coordinate: coord_uvw,
+        transform: base::rotation_translation_scale(
+            translation: float3(billboard_udim_idx.x, billboard_udim_idx.y, 0.0)
+        )
+    );
+
+    color col = is_valid_coord ? base::file_texture(texture: colormap, uvw: udim_coords).tint : color(0.0, 0.0, 0.0);
+    float alpha = is_valid_coord ? tex::lookup_float4(tex: colormap, coord: float2(udim_coords.position.x, udim_coords.position.y)).w : 0.0;
+    float3 norm = is_valid_coord ? base::tangent_space_normal_texture(
+        texture: normalmap,
+        factor: bump_factor,
+        uvw: udim_coords,
+        flip_tangent_u: false,
+        flip_tangent_v: true
+    ) : state::normal();
+
+    float2 c = float2(coord_uvw.position.x * 2.0 - 1.0, coord_uvw.position.y * 2.0 - 1.0);
+    float3 tgt_sph_norm = 
+        ::math::normalize(
+            c.x * state::texture_tangent_u(0) +
+            c.y * state::texture_tangent_v(0) +
+            ::math::sqrt(1.0 - c.x * c.x - c.y * c.y) * state::normal()
+        );
+
+    material mat = material(
+        surface: material_surface(
+            scattering: ::df::diffuse_reflection_bsdf(col)
+        ),
+        geometry: material_geometry(
+            cutout_opacity: alpha > 0.5,
+            normal: ::math::normalize(tgt_sph_norm * hemispherical_normal_scale + norm)
+        )
+    );
+} in mat;

@@ -1,0 +1,74 @@
+mdl 1.7;
+import ::math::*;
+
+float sRgbToLinearScalar(float s)
+{
+    if (s < 0.0404482362771082)
+    {
+        return s / 12.92;
+    }
+    else
+    {
+        return math::pow((s + 0.055) / 1.055, 2.4);
+    }
+}
+
+float3 sRGBToLinear(float3 val)
+{
+    return float3(
+        sRgbToLinearScalar(val.x),
+        sRgbToLinearScalar(val.y),
+        sRgbToLinearScalar(val.z));
+}
+
+float3 LinearToSrgb(float3 val)
+{
+    return math::pow(val, 1.0 / 2.2);
+}
+
+float BlendScreen(float bg, float fg)
+{
+    return 1.0 - 2.0 * (1.0 - bg) * (1.0 - fg);
+}
+
+float BlendOverlay(float bg,float fg)
+{
+    return bg < 0.5 ? 2.0 * bg * fg : BlendScreen(bg, fg);
+}
+
+float3 BlendOverlay(float3 background, float3 foreground)
+{
+    return float3(
+        BlendOverlay(background.x, foreground.x),
+        BlendOverlay(background.y, foreground.y),
+        BlendOverlay(background.z, foreground.z));
+}
+
+float3 BlendOverlay(float3 background, float3 foreground, float factor)
+{
+    return math::lerp(BlendOverlay(background, foreground), background, factor);
+}
+
+export float3 Colorize(float3 texel, float3 vertColor, float alpha, int blend_mode)
+{
+    float bggray = (texel.x + texel.y + texel.z) / 3.0;
+    float3 colorize;
+    if (blend_mode == 1) //OVERLAY
+    {
+        float3 bg = LinearToSrgb(float3(bggray, bggray, bggray));
+        colorize = sRGBToLinear(BlendOverlay(bg, vertColor));
+        //alpha = 1;
+    }
+    else if (blend_mode == 3) //OVERLAY_WB
+    {
+        colorize = sRGBToLinear(BlendOverlay(LinearToSrgb(texel), vertColor));
+        alpha = 1 - alpha;
+    }
+    else if (blend_mode == 2) //AVERAGE
+    {
+        float3 bg = LinearToSrgb(float3(bggray, bggray, bggray));
+        colorize = (bg + sRGBToLinear(vertColor)) * 0.5;
+    }
+
+    return math::lerp(texel, colorize, alpha);
+}
