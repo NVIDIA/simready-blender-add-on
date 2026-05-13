@@ -6,7 +6,7 @@ CORE Artist Tools is a collection of Blender add-ons for creating SimReady Asset
 
 ## Getting Started
 
-For all docs to get you started, please read the [SimReady Blender Addon Landing Page](Docs/simready-blender-addon-landing.md).
+For all docs to get you started, please read the [SimReady Blender Addon Landing Page](docs/simready-blender-addon-landing.md).
 
 
 ### Prerequisites
