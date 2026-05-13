@@ -1,0 +1,19 @@
+# GitHub Pages configuration for the SimReady Blender Add-on docs.
+# Source: this 'docs/' folder is published via Settings -> Pages
+# (Build and deployment -> Source: Deploy from a branch, /docs).
+
+title: SimReady Blender Add-on
+description: NVIDIA SimReady Blender Add-on documentation
+theme: jekyll-theme-cayman
+
+# Defensive excludes: these folders contain large reference images and
+# multi-hundred-MB MP4 helpers that are not currently tracked in git, but
+# if they ever are, we do NOT want Jekyll publishing them. GitHub Pages
+# enforces a 1 GB site limit and a 100 MB per-file limit.
+exclude:
+  - faq_helpers/
+  - doc_images_ref/
+  - "*.mp4"
+
+# Skip Markdown files we don't intend to render as standalone pages.
+# (None today; reserved for future internal notes.)
