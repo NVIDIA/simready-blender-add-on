@@ -1,0 +1,29 @@
+SimReady Blender Addons
+Copyright (c) 2024-2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+This product is licensed under the Apache License, Version 2.0 (see LICENSE).
+
+This project includes or installs third-party open source software.
+
+Bundled components shipped in this repository
+---------------------------------------------
+- CORE_ArtistTools/python/python-3.11.9-embed-amd64.zip
+  CPython 3.11.9 Windows embeddable distribution, redistributed verbatim
+  from python.org. Licensed under the Python Software Foundation License
+  Version 2 (PSF-2.0). Full text: PACKAGE-LICENSES/python-LICENSE.txt.
+- CORE_ArtistTools/python/get-pip.py
+  pypa/get-pip bootstrap (embeds a copy of pip), redistributed verbatim
+  from https://github.com/pypa/get-pip. Licensed under the MIT License.
+  Full texts: PACKAGE-LICENSES/get-pip-LICENSE.txt and
+  PACKAGE-LICENSES/pip-LICENSE.txt.
+
+Runtime-installed components
+----------------------------
+The add-on downloads additional Python packages from PyPI at runtime.
+Attribution and license texts for those packages are provided under
+PACKAGE-LICENSES/. See PACKAGE-LICENSES/README.md for the index.
+
+If any upstream Apache-2.0 component distributed with this project
+includes a NOTICE file, the required NOTICE content is preserved in this
+file or in the corresponding PACKAGE-LICENSES entry, per Apache 2.0
+Section 4(d).

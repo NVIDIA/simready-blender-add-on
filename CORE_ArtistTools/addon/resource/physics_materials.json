@@ -1,0 +1,338 @@
+{
+    "aluminum": {
+        "density": 2700,
+        "dynamicFriction": 0.47,
+        "restitution": 0.1,
+        "staticFriction": 0.61,
+        "fillRatio": 0.1,
+        "thickness": 0.005
+    },
+    "asphalt": {
+        "density": 2322,
+        "dynamicFriction": 0.7,
+        "restitution": 0.05,
+        "staticFriction": 0.7,
+        "fillRatio": 0.95,
+        "thickness": 0.1
+    },
+    "brass": {
+        "density": 8500,
+        "dynamicFriction": 0.44,
+        "restitution": 0.2,
+        "staticFriction": 0.51,
+        "fillRatio": 0.9,
+        "thickness": 0.008
+    },
+    "brick": {
+        "density": 2400,
+        "dynamicFriction": 0.6,
+        "restitution": 0.02,
+        "staticFriction": 0.6,
+        "fillRatio": 0.95,
+        "thickness": 0.1
+    },
+    "bronze": {
+        "density": 8800,
+        "dynamicFriction": 0.35,
+        "restitution": 0.15,
+        "staticFriction": 0.4,
+        "fillRatio": 0.9,
+        "thickness": 0.008
+    },
+    "cardboard": {
+        "density": 689,
+        "dynamicFriction": 0.7,
+        "restitution": 0.4,
+        "staticFriction": 0.7,
+        "fillRatio": 0.25,
+        "thickness": 0.003
+    },
+    "ceramic": {
+        "density": 2600,
+        "dynamicFriction": 0.3,
+        "restitution": 0.05,
+        "staticFriction": 0.35,
+        "fillRatio": 0.95,
+        "thickness": 0.01
+    },
+    "chocolate": {
+        "density": 1200,
+        "dynamicFriction": 0.35,
+        "restitution": 0.15,
+        "staticFriction": 0.4,
+        "fillRatio": 0.85,
+        "thickness": 0.008
+    },
+    "clay": {
+        "density": 1800,
+        "dynamicFriction": 0.5,
+        "restitution": 0.05,
+        "staticFriction": 0.6,
+        "fillRatio": 0.85,
+        "thickness": 0.03
+    },
+    "concrete": {
+        "density": 2400,
+        "dynamicFriction": 0.6,
+        "restitution": 0.05,
+        "staticFriction": 0.7,
+        "fillRatio": 0.95,
+        "thickness": 0.15
+    },
+    "copper": {
+        "density": 8960,
+        "dynamicFriction": 0.36,
+        "restitution": 0.15,
+        "staticFriction": 0.53,
+        "fillRatio": 0.95,
+        "thickness": 0.008
+    },
+    "fabric": {
+        "density": 1000,
+        "dynamicFriction": 0.5,
+        "restitution": 0.3,
+        "staticFriction": 0.5,
+        "fillRatio": 0.3,
+        "thickness": 0.002
+    },
+    "foam": {
+        "density": 50,
+        "dynamicFriction": 0.6,
+        "restitution": 0.7,
+        "staticFriction": 0.7,
+        "fillRatio": 0.1,
+        "thickness": 0.02
+    },
+    "glass": {
+        "density": 2500,
+        "dynamicFriction": 0.4,
+        "restitution": 0.05,
+        "staticFriction": 0.4,
+        "fillRatio": 0.9,
+        "thickness": 0.006
+    },
+    "gold": {
+        "density": 19300,
+        "dynamicFriction": 0.42,
+        "restitution": 0.05,
+        "staticFriction": 0.6,
+        "fillRatio": 0.95,
+        "thickness": 0.005
+    },
+    "grass": {
+        "density": 400,
+        "dynamicFriction": 0.45,
+        "restitution": 0.1,
+        "staticFriction": 0.5,
+        "fillRatio": 0.2,
+        "thickness": 0.015
+    },
+    "ice": {
+        "density": 917,
+        "dynamicFriction": 0.02,
+        "restitution": 0.05,
+        "staticFriction": 0.05,
+        "fillRatio": 0.95,
+        "thickness": 0.05
+    },
+    "iron": {
+        "density": 7874,
+        "dynamicFriction": 0.4,
+        "restitution": 0.15,
+        "staticFriction": 0.55,
+        "fillRatio": 0.95,
+        "thickness": 0.008
+    },
+    "lead": {
+        "density": 11340,
+        "dynamicFriction": 0.43,
+        "restitution": 0.05,
+        "staticFriction": 0.5,
+        "fillRatio": 0.95,
+        "thickness": 0.01
+    },
+    "leaf": {
+        "density": 100,
+        "dynamicFriction": 0.5,
+        "restitution": 0.2,
+        "staticFriction": 0.5,
+        "fillRatio": 0.15,
+        "thickness": 0.001
+    },
+    "leather": {
+        "density": 860,
+        "dynamicFriction": 0.5,
+        "restitution": 0.25,
+        "staticFriction": 0.55,
+        "fillRatio": 0.4,
+        "thickness": 0.003
+    },
+    "metal": {
+        "density": 7800,
+        "dynamicFriction": 0.3,
+        "restitution": 0.1,
+        "staticFriction": 0.3,
+        "fillRatio": 0.85,
+        "thickness": 0.006
+    },
+    "nickel": {
+        "density": 8908,
+        "dynamicFriction": 0.4,
+        "restitution": 0.12,
+        "staticFriction": 0.5,
+        "fillRatio": 0.95,
+        "thickness": 0.008
+    },
+    "apple": {
+        "density": 500,
+        "dynamicFriction": 0.4,
+        "restitution": 0.4,
+        "staticFriction": 0.45,
+        "fillRatio": 0.25,
+        "thickness": 0.08
+    },
+    "orange": {
+        "density": 650,
+        "dynamicFriction": 0.35,
+        "restitution": 0.5,
+        "staticFriction": 0.4,
+        "fillRatio": 0.4,
+        "thickness": 0.07
+    },
+    "banana": {
+        "density": 525,
+        "dynamicFriction": 0.6,
+        "restitution": 0.2,
+        "staticFriction": 0.65,
+        "fillRatio": 0.3,
+        "thickness": 0.08
+    },
+    "bagel": {
+        "density": 400,
+        "dynamicFriction": 0.5,
+        "restitution": 0.1,
+        "staticFriction": 0.55,
+        "fillRatio": 0.3,
+        "thickness": 0.03
+    },
+    "painted_metal": {
+        "density": 7800,
+        "dynamicFriction": 0.4,
+        "restitution": 0.15,
+        "staticFriction": 0.5,
+        "fillRatio": 0.85,
+        "thickness": 0.006
+    },
+    "paper": {
+        "density": 900,
+        "dynamicFriction": 0.45,
+        "restitution": 0.12,
+        "staticFriction": 0.5,
+        "fillRatio": 0.3,
+        "thickness": 0.00125
+    },
+    "plastic": {
+        "density": 950,
+        "dynamicFriction": 0.4,
+        "restitution": 0.4,
+        "staticFriction": 0.4,
+        "fillRatio": 0.6,
+        "thickness": 0.004
+    },
+    "rubber": {
+        "density": 1200,
+        "dynamicFriction": 0.8,
+        "restitution": 0.8,
+        "staticFriction": 0.8,
+        "fillRatio": 0.8,
+        "thickness": 0.01
+    },
+    "sand": {
+        "density": 1600,
+        "dynamicFriction": 0.55,
+        "restitution": 0.0,
+        "staticFriction": 0.6,
+        "fillRatio": 0.6,
+        "thickness": 0.1
+    },
+    "snow": {
+        "density": 200,
+        "dynamicFriction": 0.1,
+        "restitution": 0.0,
+        "staticFriction": 0.2,
+        "fillRatio": 0.4,
+        "thickness": 0.05
+    },
+    "stainless_steel_thin": {
+        "density": 8000,
+        "dynamicFriction": 0.3,
+        "restitution": 0.1,
+        "staticFriction": 0.3,
+        "fillRatio": 0.45,
+        "thickness": 0.006
+    },
+    "steel": {
+        "density": 7850,
+        "dynamicFriction": 0.3,
+        "restitution": 0.1,
+        "staticFriction": 0.3,
+        "fillRatio": 0.9,
+        "thickness": 0.005
+    },
+    "stone": {
+        "density": 2700,
+        "dynamicFriction": 0.5,
+        "restitution": 0.05,
+        "staticFriction": 0.5,
+        "fillRatio": 0.95,
+        "thickness": 0.1
+    },
+    "tire_rubber": {
+        "density": 1150,
+        "dynamicFriction": 0.9,
+        "restitution": 0.05,
+        "staticFriction": 1.0,
+        "fillRatio": 0.85,
+        "thickness": 0.012
+    },
+    "titanium": {
+        "density": 4500,
+        "dynamicFriction": 0.4,
+        "restitution": 0.15,
+        "staticFriction": 0.5,
+        "fillRatio": 0.85,
+        "thickness": 0.005
+    },
+    "vinyl": {
+        "density": 1400,
+        "dynamicFriction": 0.4,
+        "restitution": 0.3,
+        "staticFriction": 0.4,
+        "fillRatio": 0.4,
+        "thickness": 0.002
+    },
+    "water": {
+        "density": 1000,
+        "dynamicFriction": 0.0,
+        "restitution": 0.0,
+        "staticFriction": 0.0,
+        "fillRatio": 1.0,
+        "thickness": 0.1
+    },
+    "wood": {
+        "density": 700,
+        "dynamicFriction": 0.5,
+        "restitution": 0.4,
+        "staticFriction": 0.5,
+        "fillRatio": 0.7,
+        "thickness": 0.02
+    },
+    "zinc": {
+        "density": 7135,
+        "dynamicFriction": 0.4,
+        "restitution": 0.12,
+        "staticFriction": 0.45,
+        "fillRatio": 0.9,
+        "thickness": 0.006
+    }
+}

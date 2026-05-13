@@ -1,0 +1,18 @@
+# requirements.txt for mujoco-usd-converter 0.1.0a1 (submitted by NVIDIA to PyPI and subject to change as this is in alpha.)
+# TODO: will update the hashes manually as each new version is released.
+
+mujoco-usd-converter==0.1.0a1 --hash=sha256:2f8f22afaced2a387e69c47a9c1f86683fe38ce208d32571f0bcdd43de8ff472
+mujoco==3.3.5 --hash=sha256:66d455f3922a57a475bde42921812369536a50dbe89b7649dad2d48e93656b97
+usd-exchange==2.0.1 --hash=sha256:109b6e1c117c498215cd4d318b74aae5f7741308ae394601e7ace0d6c24eeb53
+absl-py==2.3.1 --hash=sha256:eeecf07f0c2a93ace0772c92e596ace6d3d3996c042b2128459aaae2a76de11d
+etils==1.13.0 --hash=sha256:d9cd4f40fbe77ad6613b7348a18132cc511237b6c076dbb89105c0b520a4c6bb
+fsspec==2025.7.0 --hash=sha256:8b012e39f63c7d5f10474de957f3ab793b47b45ae7d39f2fb735f8bbe25c0e21
+numpy-stl==3.2.0 --hash=sha256:697c81b107231362460aaedf4647e81ba54f54f59c896772fea7904c9c439da5
+numpy==2.2.6 --hash=sha256:e8213002e427c69c45a52bbd94163084025f533a55a59d6f9c5b820774ef3303
+pyopengl==3.1.10 --hash=sha256:794a943daced39300879e4e47bd94525280685f42dbb5a998d336cfff151d74f
+tinyobjloader==2.0.0rc13 --hash=sha256:d5458372d0db083ad92fb83ab298f8615766c40723127b1f0208c633c4d7fa90
+typing-extensions==4.14.1 --hash=sha256:d1e1e3b58374dc93031d6eda2420a48ea44a36c2b4766a4fdeb3710755731d76
+zipp==3.23.0 --hash=sha256:071652d6115ed432f5ce1d34c336c0adfd6a884660d1e9712a256d3d3bd4b14e
+importlib_resources==6.5.2 --hash=sha256:789cfdc3ed28c78b67a06acb8126751ced69a3d5f79c095a98298cd8a760ccec
+glfw==2.9.0 --hash=sha256:9aa3ae51601601c53838315bd2a03efb1e6bebecd072b2f64ddbd0b2556d511a
+python-utils==3.9.1 --hash=sha256:0273d7363c7ad4b70999b2791d5ba6b55333d6f7a4e4c8b6b39fb82b5fab4613
