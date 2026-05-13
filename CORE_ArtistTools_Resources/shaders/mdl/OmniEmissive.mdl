@@ -1,0 +1,124 @@
+/***************************************************************************************************
+ * Copyright 2023 NVIDIA Corporation. All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *  * Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *  * Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *  * Neither the name of NVIDIA CORPORATION nor the names of its
+ *    contributors may be used to endorse or promote products derived
+ *    from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS ``AS IS'' AND ANY
+ * EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+ * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+ * PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY
+ * OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ **************************************************************************************************/
+ 
+mdl 1.7;
+
+
+import ::anno::*;
+import ::math::*;
+import ::tex::*;
+import ::state::*;
+import ::df::diffuse_edf;
+import ::nvidia::support_definitions::texture_coordinate_2d;
+
+
+// OM-44796: scale emission such that its value is the same as the exposed pixel value with our default camera exposure settings.
+// ToDo: this should be a library function as it's used in multiple shaders
+color emissiveColorToNits(color c_In)
+{
+    // Match HdStrom: scale by inverse of rendering camera exposure * PI (nits)
+    uniform float cameraExposureInv = 1133.6f;
+    return c_In * math::PI * cameraExposureInv;
+}
+
+
+export material OmniEmissive(
+	color emissive_color = color(1.0, 0.1, 0.1) [[
+		anno::display_name("Emissive Color"),
+		anno::in_group("Emissive"),
+		anno::description("The emissive color. This parameter is ignored if Emissive Color Map is used.")
+	]],
+    uniform texture_2d emissive_color_texture = texture_2d() [[ 
+		anno::display_name("Emissive Color Map"),
+        anno::in_group("Emissive"),
+		anno::description("The emissive color texture. Alpha is used as cutout if applicable.")
+    ]],		
+	float emission_intensity = 1.f [[
+		anno::display_name("Emission Intensity"),
+        anno::in_group("Emissive"),
+		anno::description("Emission Intensity Scale")
+	]],
+	uniform bool backface_emission = false [[
+		anno::display_name("Backface Emission"),
+		anno::in_group("Emissive"),
+		anno::description("Set whether surface emits light from the backface.")
+	]]
+)
+[[
+	anno::display_name("OmniEmissive"),
+	anno::description("Emissive shader."),
+    anno::in_group("Base"),
+	anno::version(1, 1, 0),
+	anno::author("NVIDIA CORPORATION"), 
+	anno::key_words(string[]("omni", "omniverse", "emissive", "emission"))
+]]
+= let {
+	bool use_texture = tex::texture_isvalid(emissive_color_texture);
+
+	// look up input emissive color map	
+	float4 emissive_texture_result = use_texture ?
+		tex::lookup_float4(
+			tex: emissive_color_texture,
+			coord: nvidia::support_definitions::texture_coordinate_2d(0),
+			wrap_u: tex::wrap_clamp,
+			wrap_v: tex::wrap_clamp,
+			crop_u: float2(0.0, 1.0),
+			crop_v: float2(0.0, 1.0),
+			frame: 0.0
+		) :
+		float4(0.0, 0.0, 0.0, 1.0);
+
+	color emissive_color_result = use_texture ?
+		color(emissive_texture_result.x, emissive_texture_result.y, emissive_texture_result.z) :
+		emissive_color;
+	float emissive_alpha = use_texture ? emissive_texture_result.w : 1.0;
+
+	color emissiveAsNits = emissiveColorToNits(emissive_color_result);
+
+	// construct shader
+	material_surface main(
+		scattering: bsdf(),
+		emission: material_emission(
+			emission: df::diffuse_edf(""),
+			intensity: emissiveAsNits * emission_intensity,
+			mode: intensity_radiant_exitance
+		)
+	);
+	material_geometry geometry(
+		displacement: float3(0.f),
+		cutout_opacity: emissive_alpha,
+		// normal: state::normal()
+		normal: float3(0.f)
+	);			
+}
+in material(
+	thin_walled: backface_emission ? true : false,
+	surface: main,
+	backface: backface_emission ? main : material_surface(),
+	geometry: geometry
+);

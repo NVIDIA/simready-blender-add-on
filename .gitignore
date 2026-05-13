@@ -1,0 +1,60 @@
+# SPDX-FileCopyrightText: Copyright (c) 2024-2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+# SPDX-License-Identifier: Apache-2.0
+#
+# NOTE: This .gitignore is intended for this repo as a standalone working
+# space. When this branch is merged into the parent repo, this file is
+# expected to be removed in favor of the parent's top-level .gitignore.
+
+# ---- Python bytecode / caches ----
+__pycache__/
+*.py[cod]
+*$py.class
+
+# ---- Python build / packaging artifacts ----
+build/
+dist/
+*.egg-info/
+*.egg
+.eggs/
+pip-wheel-metadata/
+
+# ---- Virtual environments ----
+.venv/
+venv/
+env/
+ENV/
+
+# ---- Test / type-check / lint caches ----
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.nox/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+
+# ---- Editors / IDEs ----
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ---- OS junk ----
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---- Blender backup files ----
+*.blend1
+
+# ---- Bundled Python 3.11.9 runtime extraction (Blender 5.1+ MJCF compat) ----
+# python-3.11.9-embed-amd64.zip self-extracts here on first run; the
+# unpacked tree must never be committed or shipped in the addon zip.
+CORE_ArtistTools/python/python-3.11.9/
+
+# ---- Packaged addon zips produced by CORE_SysUtils/package/make_core_zip.py ----
+SimReady_Blender_CORE_*.zip
+SimReady_Blender_CORE.zip
