@@ -107,7 +107,7 @@ To use the pre-built version of the Blender add-on, download the add-on zip file
 
 
 1. In a browser, go to <a href="https://github.com/NVIDIA/simready-blender-add-on/releases/tag/Latest" target="_blank" rel="noopener noreferrer">SimReady Blender Add on release</a>  .
-2. Download **SimReady_Blender_CORE_2026.4.0.zip**.
+2. Download **SimReady_Blender_CORE@2026.4.0.zip**.
 3. By default, the download goes to "C:\<User>\Downloads"; you do not need to move it.
 
 
@@ -136,7 +136,7 @@ In a browser, go to <a href="https://github.com/NVIDIA/simready-blender-add-on" 
    python CORE_SysUtils/package/make_core_zip.py
    ```
 
-The Python script creates `SimReady_Blender_CORE_<version>.zip` (for example, `SimReady_Blender_CORE_2026.4.0.zip`) at the repo root. The zip file contains both `CORE_ArtistTools/` and `CORE_ArtistTools_Resources/`, which are essential operations and functions that form the foundation of Blender’s interface and workflow.
+The Python script creates `SimReady_Blender_CORE@<version>.zip` (for example, `SimReady_Blender_CORE@2026.4.0.zip`) at the repo root. The zip file contains both `CORE_ArtistTools/` and `CORE_ArtistTools_Resources/`, which are essential operations and functions that form the foundation of Blender’s interface and workflow.
 
 
 ### Install the Blender Add-on
@@ -165,8 +165,8 @@ You use **Blender Preferences** to install the SimReady Blender Add-on, as follo
 
    <img src="./doc_images/image10.png" alt="image10" width="800">
 
-8. Navigate to the `SimReady_Blender_CORE_2026.4.0.zip` file. **(1)**.  
-9. Select `SimReady_Blender_CORE_2026.4.0.zip`. **(2)**  
+8. Navigate to the `SimReady_Blender_CORE@2026.4.0.zip` file. **(1)**.  
+9. Select `SimReady_Blender_CORE@2026.4.0.zip`. **(2)**  
 10. Click **Install from Disk** **(3)**.
 
 Wait for the installation to complete; it might take a few minutes depending on your internet speeds. Subsequent installs should be much faster.
