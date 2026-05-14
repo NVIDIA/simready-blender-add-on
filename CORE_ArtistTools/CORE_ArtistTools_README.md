@@ -106,7 +106,7 @@ The SimReady Blender Add-on is built and distributed as a single `.zip` file fro
 To use the pre-built version of the Blender add-on, download the add-on zip file.
 
 
-1. In a browser, go to <a href="https://github.com/NVIDIA/simready-blender-add-on/releases/tag/2026.04.0" target="_blank" rel="noopener noreferrer">SimReady Blender Add on release</a>  .
+1. In a browser, go to <a href="https://github.com/NVIDIA/simready-blender-add-on/releases/tag/Latest" target="_blank" rel="noopener noreferrer">SimReady Blender Add on release</a>  .
 2. Download **SimReady_Blender_CORE_2026.4.0.zip**.
 3. By default, the download goes to "C:\<User>\Downloads"; you do not need to move it.
 

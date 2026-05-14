@@ -158,7 +158,7 @@ You should now have a `C:\sr_dev\foundations\nv_core` folder and a `C:\sr_dev\fo
 
 #### SimReady Blender CORE Tools Installation
 
-1. In a browser, go to the <a href="https://github.com/NVIDIA/simready-blender-add-on/releases/tag/2026.04.0" target="_blank" rel="noopener noreferrer">SimReady Blender Add-on release</a>.
+1. In a browser, go to the <a href="https://github.com/NVIDIA/simready-blender-add-on/releases/tag/Latest" target="_blank" rel="noopener noreferrer">SimReady Blender Add-on release</a>.
 2. Download **SimReady_Blender_CORE_2026.4.0.zip**.
 3. By default, the download goes to "C:\<User>\Downloads"; you do not need to move it.
 
