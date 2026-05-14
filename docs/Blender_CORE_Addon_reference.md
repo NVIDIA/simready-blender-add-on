@@ -10,7 +10,7 @@
    - [Set Up Your Project Configuration](#set-up-your-project-configuration)
 - [Where to Find the Panels](#where-to-find-the-panels)
 - [Blender CORE Add-on N-Panel](#blender-core-add-on-n-panel)
-   - [Main / Version](#main--version)
+   - [Main / Version](#main-version)
    - [Learning](#learning)
    - [Asset Mgmt](#asset-mgmt)
    - [Quick Tools](#quick-tools)
@@ -25,10 +25,10 @@
    - [SimReady Blender CORE Logs](#simready-blender-core-logs)
    - [Preflight and Export](#preflight-and-export)
 - [Properties Editor Panels](#properties-editor-panels)
-   - [Object > Wikidata Metadata](#object--wikidata-metadata)
-   - [Object Data > Wikidata Metadata](#object-data--wikidata-metadata)
-   - [Material > SimReady Non-Visual Settings](#material--simready-non-visual-settings)
-   - [Object > Dense Captions](#object--dense-captions)
+   - [Object > Wikidata Metadata](#object-wikidata-metadata)
+   - [Object Data > Wikidata Metadata](#object-data-wikidata-metadata)
+   - [Material > SimReady Non-Visual Settings](#material-simready-non-visual-settings)
+   - [Object > Dense Captions](#object-dense-captions)
    - [Materials Naming](#materials-naming)
 - [File Menu Integrations](#file-menu-integrations)
 - [USD Hook](#usd-hook)
@@ -116,25 +116,25 @@ Open Blender's add-on preferences:
 
 1. Open the Blender app, and go to **Edit > Preferences > Add-ons**.
 
-   <img src="./doc_images_ref/_2_file_preferences.png" alt="image2" width="800">
+   ![image2](doc_images_ref/_2_file_preferences.png){w=800px}
 
 2. Remove any earlier version of the Blender CORE Add-on, if installed.
 
-   <img src="./doc_images_ref/_3_preferences_core_tool.png" alt="image3" width="800">
+   ![image3](doc_images_ref/_3_preferences_core_tool.png){w=800px}
 
 3. Install the latest version of the add-on.
 
    1. In Blender, go to **Edit > Preferences**.
 
-   <img src="./doc_images_ref/_2_file_preferences.png" alt="image2" width="800">
+   ![image2](doc_images_ref/_2_file_preferences.png){w=800px}
 
    2. Click **Add-ons** in the navigation panel on the left side of the window.
 
-   <img src="./doc_images_ref/_12_click_add_ons.png" alt="image3" width="800">
+   ![image3](doc_images_ref/_12_click_add_ons.png){w=800px}
 
    3. Click the down-arrow on the top right side of the window to open a dropdown menu.
 
-   <img src="./doc_images_ref/_13_install_from_disk.png" alt="image4" width="800">
+   ![image4](doc_images_ref/_13_install_from_disk.png){w=800px}
 
    4. Click **Install from Disk…** in the menu.
 
@@ -142,13 +142,13 @@ Open Blender's add-on preferences:
 
    6. Click the **Install from Disk** button on the bottom of the window.
 
-   <img src="./doc_images_ref/_5_install_zip.png" alt="image5" width="800">
+   ![image5](doc_images_ref/_5_install_zip.png){w=800px}
 
    7. Wait for the installation to complete. This can take several minutes, depending on connection speeds, during which Blender does not report any installation progress. If it does not finish within five minutes, **restart Blender**.
 
 4. Enable the Blender CORE Add-on. **Note:** This might not be necessary. Blender usually auto-enables it.
 
-   <img src="./doc_images_ref/_14_enable_addon.png" alt="image3" width="800">
+   ![image3](doc_images_ref/_14_enable_addon.png){w=800px}
 
 5. **Restart Blender**.
 
@@ -160,27 +160,27 @@ To connect the Blender add-on to the SimReady Foundation, follow these steps to 
 
 1. In Blender, go to **Edit > Preferences**.
 
-   <img src="./doc_images_ref/_2_file_preferences.png" alt="image3" width="800">
+   ![image3](doc_images_ref/_2_file_preferences.png){w=800px}
 
 2. Select **Add-ons** in the left side of the **Preferences** window.
 
-   <img src="./doc_images_ref/_6_addon_enabled.png" alt="image6" width="800">
+   ![image6](doc_images_ref/_6_addon_enabled.png){w=800px}
 
 3. Find the **SimReady_Blender_Core** Add-on, and click the dropdown arrow (`>`) to expand the **SimReady_Blender_Core** preferences.
 
-   <img src="./doc_images_ref/_7_addon_opened.png" alt="image3" width="800">
+   ![image3](doc_images_ref/_7_addon_opened.png){w=800px}
 
 4. Use the folder icon (inside a red rectangle) in **General Settings** to open a **file picker**, and navigate to the `project_config.toml` file located in `<foundations>\sample_content\project_config.toml`.
 
-   <img src="./doc_images_ref/_8_select_confg.png" alt="image3" width="800">
+   ![image3](doc_images_ref/_8_select_confg.png){w=800px}
 
 5. Select `project_config.toml` and click **Accept**.
 
-   <img src="./doc_images_ref/_9_select_config_picker.png" alt="image3" width="800">
+   ![image3](doc_images_ref/_9_select_config_picker.png){w=800px}
 
 All file paths (**Pick config file**, **Project Root**, **nv_core**, and **Source Folder**) should now correctly point to the necessary folders for the add-on to function. If any of these folders remain empty, go back to step 5, re-select `project_config.toml`, and click **Accept**.
 
-   <img src="./doc_images_ref/_10_configed_picked.png" alt="image3" width="800">
+   ![image3](doc_images_ref/_10_configed_picked.png){w=800px}
 
 ### Where to Find the Panels
 
@@ -204,7 +204,7 @@ When first installing the SimReady Blender add-ons, Blender might prompt you to 
 
 If `pip`* is still generating the cache when initialization finishes, you might see a warning to restart Blender. After restarting, the add-on should initialize correctly.
 
-<img src="./doc_images_ref/_11_restart_dialogue.png" alt="image3" width="800">
+![image3](doc_images_ref/_11_restart_dialogue.png){w=800px}
 
 As noted earlier, restart Blender after installing the SimReady Blender CORE Add-on.
 
@@ -216,79 +216,79 @@ This panel is located in Blender's **N-panel** under the **CORE** tab.
 
 > **Tip:** The hotkey in Blender is N. Be sure your mouse hovers over the viewport before pressing N.
 
-<img src="./doc_images_ref/image9.png" alt="image3" width="800">
+![image3](doc_images_ref/image9.png){w=800px}
 
 The **CORE** tab contains the following panels.
 
-<img src="./doc_images_ref/_15_Outline_UI.png" alt="image3" width="800">
+![image3](doc_images_ref/_15_Outline_UI.png){w=800px}
 
 ### Main / Version
 `CORE_PT_main_panel`: Header panel that displays the **add-on name** and **version**.
 
-<img src="./doc_images_ref/_18_main.png" alt="image3" width="800">
+![image3](doc_images_ref/_18_main.png){w=800px}
 
 > **Note:** `CORE_PT_main_panel` refers to the class names within the add-on. This can be a useful reference for developers.
 
 ### Learning
 `CORE_PT_Documentation`: Opens this reference guide in your default browser from the Blender interface.
 
-<img src="./doc_images_ref/_19_learning.png" alt="image3" width="800">
+![image3](doc_images_ref/_19_learning.png){w=800px}
 
-> Note: The video section is created for the internal NVIDIA team and cannot be used by outside teams. As an alternative, video guides are available in the [`docs/faq_helpers`](./faq_helpers/) folder of the repository. Because GitHub does not play .mp4 files inline, you must download each video to view it. To watch a video, open its link in the following table, click **Download raw file** on the GitHub page, and play the downloaded file locally
+> Note: The video section is created for the internal NVIDIA team and cannot be used by outside teams. As an alternative, video guides are available in the [`docs/faq_helpers`](https://github.com/NVIDIA/simready-blender-add-on/tree/main/docs/faq_helpers) folder of the repository. Because GitHub does not play .mp4 files inline, you must download each video to view it. To watch a video, open its link in the following table, click **Download raw file** on the GitHub page, and play the downloaded file locally
 
 | # | Title | Video |
 |---|-------|-------|
-| 1 | How to install the CORE tool add-on | [1_How_to_install_core_tool_addon.mp4](./faq_helpers/1_How_to_install_core_tool_addon.mp4) |
-| 2 | How to access CORE tool log files | [2_How_to_access_core_tool_log_files.mp4](./faq_helpers/2_How_to_access_core_tool_log_files.mp4) |
-| 3 | How to create SimReady collections | [3_How_to_create_Sim_Ready_Collections.mp4](./faq_helpers/3_How_to_create_Sim_Ready_Collections.mp4) |
-| 4 | How to import MJCF assets | [4_How_to_import_MJCF_assets.mp4](./faq_helpers/4_How_to_import_MJFC_assets.mp4) |
-| 5 | How to add grasp points | [5_How_to_add_grasp_points.mp4](./faq_helpers/5_How_to_add_grasp_points.mp4) |
-| 6 | How to create uni-body joints | [6_How_to_create_uni_body_joints.mp4](./faq_helpers/6_How_to_create_uni_body_joints.mp4) |
-| 7 | How to set up fixed joints | [7_How_to_setup_fixed_joints.mp4](./faq_helpers/7_How_to_setup_fixed_joints.mp4) |
-| 8 | How to set up revolute (hinge) joints | [8_How_to_setup_revolute(hinge)_joints.mp4](./faq_helpers/8_How_to_setup_revolute_joints.mp4) |
-| 9 | How to set up prismatic joints | [9_How_to_setup_prismatic(slider)_joints.mp4](./faq_helpers/9_How_to_setup_prismatic_joints.mp4) |
-| 10 | How to create folder structure automatically | [10_How_to_create_folder_structure_automatically.mp4](./faq_helpers/10_How_to_create_folder_structure_automatically.mp4) |
-| 11 | How to find intersecting geometry | [11_How_to_find_intersecting_geometry.mp4](./faq_helpers/11_How_to_find_intersecting_geometry.mp4) |
+| 1 | How to install the CORE tool add-on | [1_How_to_install_core_tool_addon.mp4](https://github.com/NVIDIA/simready-blender-add-on/blob/main/docs/faq_helpers/1_How_to_install_core_tool_addon.mp4) |
+| 2 | How to access CORE tool log files | [2_How_to_access_core_tool_log_files.mp4](https://github.com/NVIDIA/simready-blender-add-on/blob/main/docs/faq_helpers/2_How_to_access_core_tool_log_files.mp4) |
+| 3 | How to create SimReady collections | [3_How_to_create_Sim_Ready_Collections.mp4](https://github.com/NVIDIA/simready-blender-add-on/blob/main/docs/faq_helpers/3_How_to_create_Sim_Ready_Collections.mp4) |
+| 4 | How to import MJCF assets | [4_How_to_import_MJCF_assets.mp4](https://github.com/NVIDIA/simready-blender-add-on/blob/main/docs/faq_helpers/4_How_to_import_MJFC_assets.mp4) |
+| 5 | How to add grasp points | [5_How_to_add_grasp_points.mp4](https://github.com/NVIDIA/simready-blender-add-on/blob/main/docs/faq_helpers/5_How_to_add_grasp_points.mp4) |
+| 6 | How to create uni-body joints | [6_How_to_create_uni_body_joints.mp4](https://github.com/NVIDIA/simready-blender-add-on/blob/main/docs/faq_helpers/6_How_to_create_uni_body_joints.mp4) |
+| 7 | How to set up fixed joints | [7_How_to_setup_fixed_joints.mp4](https://github.com/NVIDIA/simready-blender-add-on/blob/main/docs/faq_helpers/7_How_to_setup_fixed_joints.mp4) |
+| 8 | How to set up revolute (hinge) joints | [8_How_to_setup_revolute_joints.mp4](https://github.com/NVIDIA/simready-blender-add-on/blob/main/docs/faq_helpers/8_How_to_setup_revolute_joints.mp4) |
+| 9 | How to set up prismatic joints | [9_How_to_setup_prismatic_joints.mp4](https://github.com/NVIDIA/simready-blender-add-on/blob/main/docs/faq_helpers/9_How_to_setup_prismatic_joints.mp4) |
+| 10 | How to create folder structure automatically | [10_How_to_create_folder_structure_automatically.mp4](https://github.com/NVIDIA/simready-blender-add-on/blob/main/docs/faq_helpers/10_How_to_create_folder_structure_automatically.mp4) |
+| 11 | How to find intersecting geometry | [11_How_to_find_intersecting_geometry.mp4](https://github.com/NVIDIA/simready-blender-add-on/blob/main/docs/faq_helpers/11_How_to_find_intersecting_geometry.mp4) |
 
 ### Asset Mgmt
 `CORE_PT_Asset`: Sets up the on-disk folder structure for a new asset and saves the asset file in the correct location. Follow this structure because many tools depend on it.
 
-<img src="./doc_images_ref/_17_asset_man.png" alt="image3" width="800">
+![image3](doc_images_ref/_17_asset_man.png){w=800px}
 
 #### Asset Classification Dropdown
 This dropdown menu is currently focused on **Props**. It also exposes legacy DriveSim classes (Vehicles), but **Props** is the default and the only classification under active development for SimReady.
 
-<img src="./doc_images_ref/_16_asset_man_dropdown.png" alt="image3" width="800">
+![image3](doc_images_ref/_16_asset_man_dropdown.png){w=800px}
 
 #### Make Source Directories
 
 `CORE_PT_make_source_dir`: Child of the Asset Management (Asset Mgmt) panel. Pick a location for the prop, then create the folders and save the asset file in one click.
 
-<img src="./doc_images_ref/image12.png" alt="image3" width="800">
-<img src="./doc_images_ref/image13.png" alt="image3" width="800">
-<img src="./doc_images_ref/image14.png" alt="image3" width="800">
+![image3](doc_images_ref/image12.png){w=800px}
+![image3](doc_images_ref/image13.png){w=800px}
+![image3](doc_images_ref/image14.png){w=800px}
 
 The following image shows the resulting folder structure.
 
-<img src="./doc_images_ref/image15.png" alt="image3" width="800">
+![image3](doc_images_ref/image15.png){w=800px}
 
 ### Quick Tools
 
 `CORE_PT_Tools`: Small utilities and helpers for asset setup.
 
-<img src="./doc_images_ref/_20_quicktools.png" width="800">
+![](doc_images_ref/_20_quicktools.png){w=800px}
 
 #### Prop Platform
 
 A simple orientation widget. Assets can be authored from any direction: NVIDIA Omniverse uses a Z-up, X-forward orientation, but Blender often pushes you toward Y-forward. Use this widget as a reference for the asset's orientation.
 
-<img src="./doc_images_ref/image24.png" width="800">
+![](doc_images_ref/image24.png){w=800px}
 
 #### Ref Figure Prop
 
 A standard human figure (6 ft. / 1.83 m) for scale reference.
 
-<img src="./doc_images_ref/image25.png" width="800">
+![](doc_images_ref/image25.png){w=800px}
 
 #### Child Sub-panels
 
@@ -300,7 +300,7 @@ A standard human figure (6 ft. / 1.83 m) for scale reference.
 
 `CORE_SIMREADY_PT_top_panel`: A central place to attach SimReady metadata at the asset (root) level. The panel combines a Wikidata search, global metadata fields, and a global *dense caption* generator. Per-object metadata still lives in the [Properties Editor Panels](#properties-editor-panels) section.
 
-<img src="./doc_images_ref/_21_Metadata.png" width="800">
+![](doc_images_ref/_21_Metadata.png){w=800px}
 
 #### Wikidata
 To read more about Wikidata, refer to the <a href="https://www.wikidata.org/wiki/Wikidata:Main_Page" target="_blank" rel="noopener noreferrer">Wikidata main page</a>. When you search for a term such as `banana`, the API returns a URL such as <a href="https://www.wikidata.org/wiki/Q503" target="_blank" rel="noopener noreferrer">https://www.wikidata.org/wiki/Q503</a>. In this interface, you can use either the term (`banana`) or the QID (`Q503`).
@@ -318,7 +318,7 @@ Dense captions are descriptions that you tag your asset with to help large langu
 - `sr_core.export_mjcf`: Write MJCF back out.
 - `sr_core.repair_mujoco_converter`: Re-install the bundled MuJoCo converter dependencies if they get corrupted.
 
-<img src="./doc_images_ref/_22_MJCF.png" width="800">
+![](doc_images_ref/_22_MJCF.png){w=800px}
 
 #### Use Included Colliders
 Finds any MuJoCo meshes named `colliders` and imports them into Blender.
@@ -338,7 +338,7 @@ Searches local Python `site-packages` to check whether the USD Exchange librarie
 
 `SRCORE_PT_simready_panel`: Use one-click creation of the named Blender Collections (`Export`, `Geometry`, `ReferencePrims`, and `Colliders`) that the SimReady USD exporter expects. Operator: `sr_core.create_simready_collections`.
 
-<img src="./doc_images_ref/_23_Collections.png" width="800">
+![](doc_images_ref/_23_Collections.png){w=800px}
 
 #### Collections
 
@@ -359,11 +359,11 @@ The exporter searches only within these collection groups.
 
 #### Overview
 The following image shows the entire USD Physics Joint Attributes panel. Subsequent sections describe each joint type and button.
-<img src="./doc_images_ref/_24_JointOverview.png" width="800">
+![](doc_images_ref/_24_JointOverview.png){w=800px}
 
 #### Uni-Body Creation
 A uni-body asset is a single object with no moving parts. It contains only one rigid body. Examples include an orange, a cup, and a thumbscrew.
-<img src="./doc_images_ref/_25_Unibody.png" width="800">
+![](doc_images_ref/_25_Unibody.png){w=800px}
 
 - `Is uni-body?`: Shifts the UI for uni-body creation.
 - `Body 0 (Parent)`: Choose the object or mesh.
@@ -372,7 +372,7 @@ A uni-body asset is a single object with no moving parts. It contains only one r
 #### Revolute Joint Creation
 A revolute joint can rotate around one axis. Examples include a door hinge and a container lid.
 
-<img src="./doc_images_ref/_26_Revolute.png" width="800">
+![](doc_images_ref/_26_Revolute.png){w=800px}
 
 - `Is uni-body?`: Leave off (otherwise the UI engages uni-body creation).
 - `Auto-sync UI when selecting objects`: Usually best to leave on. If the object has previously applied pxr attributes, the UI syncs back to those values.
@@ -389,7 +389,7 @@ A revolute joint can rotate around one axis. Examples include a door hinge and a
 #### Prismatic Joint Creation
 A prismatic joint can slide along one axis. An example is a desk drawer.
 
-<img src="./doc_images_ref/_27_Prismatic.png" width="800">
+![](doc_images_ref/_27_Prismatic.png){w=800px}
 
 - `Is uni-body?`: Leave off (otherwise the UI engages uni-body creation).
 - `Auto-sync UI when selecting objects`: Usually best to leave on. If the object has previously applied pxr attributes, the UI syncs back to those values.
@@ -405,7 +405,7 @@ A prismatic joint can slide along one axis. An example is a desk drawer.
 #### Fixed Joint Creation
 A fixed joint does not move. An example is a shelf attached to an upright.
 
-<img src="./doc_images_ref/_28_Fixed.png" width="800">
+![](doc_images_ref/_28_Fixed.png){w=800px}
 
 - `Is uni-body?`: Leave off (otherwise the UI engages uni-body creation).
 - `Auto-sync UI when selecting objects`: Usually best to leave on. If the object has previously applied pxr attributes, the UI syncs back to those values.
@@ -422,9 +422,9 @@ The **Grasp Setup** panel, also referred to as the *canonical grasp* system, pro
 
 `SRCORE_PT_grasp_setup`: Author grasp pairs or spheres on a prop (used downstream by runtime tests).
 
-<img src="./doc_images_ref/_29_GraspSetup.png" width="800">
+![](doc_images_ref/_29_GraspSetup.png){w=800px}
 
-For more information about how grasp points work, refer to [How to add grasp points](./faq_helpers/5_How_to_add_grasp_points.mp4).
+For more information about how grasp points work, refer to [How to add grasp points](https://github.com/NVIDIA/simready-blender-add-on/blob/main/docs/faq_helpers/5_How_to_add_grasp_points.mp4).
 
 ### Thumbnailer
 
@@ -470,21 +470,21 @@ This replaces the older standalone **Lighting** panel; the legacy `pt_lighting.p
 
 Click **Run Validation(s)** to launch the Qt-based validation UI.
 
-<img src="./doc_images_ref/_35_Preflight_UI.png" width="800">
+![](doc_images_ref/_35_Preflight_UI.png){w=800px}
 
 Click **VALIDATE** to start the checks.
 
-<img src="./doc_images_ref/_36_Checker_Failed.png" width="800">
+![](doc_images_ref/_36_Checker_Failed.png){w=800px}
 
 If you see failed checks, click the failed card to open the inspector or auto-fixer.
 
 Click **Autofix** to try to repair the errors.
 
-<img src="./doc_images_ref/_37_Checker_fix.png" width="800">
+![](doc_images_ref/_37_Checker_fix.png){w=800px}
 
 Re-run **VALIDATE** to check whether the errors have cleared. When errors are cleared, the **EXPORT SIMREADY** button turns green. Warnings do not block export (only errors).
 
-<img src="./doc_images_ref/_38_Ready.png" width="800">
+![](doc_images_ref/_38_Ready.png){w=800px}
 
 A successful export produces a `/simready_usd` folder containing the asset exported as a usd.
 
@@ -499,16 +499,16 @@ The following panels are not in the Blender CORE **N-panel**. They are located i
 
 `WD_PT_object_panel`: Search Wikidata and apply a Wikidata QID to the selected object as a SimReady semantic label. This is important for downstream machine learning (ML) segmentation.
 
-<img src="./doc_images_ref/image37.png" alt="image37" width="800">
-<img src="./doc_images_ref/image38.png" alt="image38" width="800">
-<img src="./doc_images_ref/image39.png" alt="image39" width="800">
-<img src="./doc_images_ref/image40.png" alt="image40" width="800">
+![image37](doc_images_ref/image37.png){w=800px}
+![image38](doc_images_ref/image38.png){w=800px}
+![image39](doc_images_ref/image39.png){w=800px}
+![image40](doc_images_ref/image40.png){w=800px}
 
 > **Tip:** After applying the QID, you can also edit the field manually or run another search.
 
 > **Tip:** The applied Wikidata QID is also visible in the **N-panel > Item > Custom Properties**.
 
-<img src="./doc_images_ref/image41.png" alt="image41" width="800">
+![image41](doc_images_ref/image41.png){w=800px}
 
 ### Object Data > Wikidata Metadata
 
@@ -518,12 +518,12 @@ The following panels are not in the Blender CORE **N-panel**. They are located i
 
 `MATERIAL_PT_simready_nonvisual`: Non-visual sensor attributes used by the <a href="https://docs.omniverse.nvidia.com/materials-and-rendering/latest/rtx-renderer.html" target="_blank" rel="noopener noreferrer">NVIDIA RTX renderer</a> to model how a material reads to non-visual sensors such as radar, lidar, or infrared (IR). The panel lets you manage Base, Coating, and Attributes. For example: base = `aluminum`, coating = `painted`, attributes = `emissive, visually-transparent, single-sided`.
 
-<img src="./doc_images_ref/image47.png" alt="image47" width="800">
-<img src="./doc_images_ref/image48.png" alt="image48" width="800">
-<img src="./doc_images_ref/image49.png" alt="image49" width="800">
-<img src="./doc_images_ref/image50.png" alt="image50" width="800">
-<img src="./doc_images_ref/image51.png" alt="image51" width="800">
-<img src="./doc_images_ref/image52.png" alt="image52" width="800">
+![image47](doc_images_ref/image47.png){w=800px}
+![image48](doc_images_ref/image48.png){w=800px}
+![image49](doc_images_ref/image49.png){w=800px}
+![image50](doc_images_ref/image50.png){w=800px}
+![image51](doc_images_ref/image51.png){w=800px}
+![image52](doc_images_ref/image52.png){w=800px}
 
 The panel also exposes **Assign Usd Physics Properties** and **Update Usd Physics Properties** so a JSON sidecar of PhysX material properties can be attached to each material:
 
@@ -535,11 +535,11 @@ The panel also exposes **Assign Usd Physics Properties** and **Update Usd Physic
 
 Dense captions are detailed human-readable descriptions of an asset that are used for scene understanding (for example, "A red, two-door sports car with a tan leather interior and chrome rims"). The add-on lets you enter the description.
 
-<img src="./doc_images_ref/image42.png" alt="image42" width="800">
-<img src="./doc_images_ref/image43.png" alt="image43" width="800">
-<img src="./doc_images_ref/image44.png" alt="image44" width="800">
-<img src="./doc_images_ref/image45.png" alt="image45" width="800">
-<img src="./doc_images_ref/image46.png" alt="image46" width="800">
+![image42](doc_images_ref/image42.png){w=800px}
+![image43](doc_images_ref/image43.png){w=800px}
+![image44](doc_images_ref/image44.png){w=800px}
+![image45](doc_images_ref/image45.png){w=800px}
+![image46](doc_images_ref/image46.png){w=800px}
 
 > **Tip:** You can optionally enable the BLIP (Bootstrapping Language-Image Pre-training) AI model to set up dense captions. However, the AI-generated caption is only a starting point. Add detail and correct mistakes as needed.
 
@@ -547,11 +547,11 @@ Dense captions are detailed human-readable descriptions of an asset that are use
 
 The dedicated **Materials Naming** panel is now under **Quick Tools → Create Material Names** (refer to [Child Sub-panels](#child-sub-panels)). Earlier screenshots are included here for reference.
 
-<img src="./doc_images_ref/image26.png" alt="image26" width="800">
-<img src="./doc_images_ref/image27.png" alt="image27" width="800">
-<img src="./doc_images_ref/image28.png" alt="image28" width="800">
-<img src="./doc_images_ref/image29.png" alt="image29" width="800">
-<img src="./doc_images_ref/image30.png" alt="image30" width="800">
+![image26](doc_images_ref/image26.png){w=800px}
+![image27](doc_images_ref/image27.png){w=800px}
+![image28](doc_images_ref/image28.png){w=800px}
+![image29](doc_images_ref/image29.png){w=800px}
+![image30](doc_images_ref/image30.png){w=800px}
 
 ## File Menu Integrations
 
