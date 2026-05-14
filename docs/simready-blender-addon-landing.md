@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # SimReady Blender Add-on Documentation Hub
 
 Blender is a key authoring component in many SimReady pipelines. You can create SimReady-oriented assets in Blender or another digital content creation (DCC) application. When assets originate in computer-aided design (CAD) tools, you can import them into Blender, prepare SimReady-aligned geometry, shading, and simulation-oriented setup, and package the assets in Universal Scene Description (USD) for export.

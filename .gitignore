@@ -20,7 +20,9 @@ pip-wheel-metadata/
 
 # ---- Virtual environments ----
 .venv/
+.venv-*/
 venv/
+venv-*/
 env/
 ENV/
 
@@ -58,3 +60,6 @@ CORE_ArtistTools/python/python-3.11.9/
 # ---- Packaged addon zips produced by CORE_SysUtils/package/make_core_zip.py ----
 SimReady_Blender_CORE_*.zip
 SimReady_Blender_CORE.zip
+
+# ---- Sphinx HTML build output (rendered by build_docs.py / CI) ----
+docs/_build/
