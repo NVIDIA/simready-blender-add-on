@@ -6,11 +6,22 @@ on:
     tags: ["v*"]
   workflow_dispatch:
 
+# Allow this workflow to publish to GitHub Pages via the official Pages
+# deployment API. No write access to repo contents is needed because we
+# upload an artifact instead of force-pushing to a gh-pages branch.
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, but do not cancel in-progress runs
+# (we want the latest commit's deploy to land, even if older runs queue up).
+concurrency:
+  group: pages
+  cancel-in-progress: false
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -32,16 +43,18 @@ jobs:
       - name: Build docs
         run: python build_docs.py --strict
 
-      - name: Deploy to gh-pages
-        run: |
-          DOCS_DIR="docs/_build/html"
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs/_build/html
 
-          cd "$DOCS_DIR"
-          touch .nojekyll
-
-          git init -b gh-pages
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add -A
-          git commit -m "Deploy docs from ${GITHUB_SHA::8}"
-          git push --force "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" gh-pages
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
